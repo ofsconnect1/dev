@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block sidebar %}
+<div class="col-md-4">
+    <div class="content-section">
+      <h3>My Connections</h3>
+      <p class='text-muted'>My connections here
+        <ul class="list-group">
+            {% for connection in connections %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+{% endblock sidebar %}
+
+
+
+
+
+
+{% block content %}
+<h1>Profile page / form here</h1>
+    <div class="container">
+        <div class="content-section">
+        <p>Need to upload image here...</p>            
+        <img src="default.jpg" class="rounded" alt="Default image" width="304" height="236"> 
+    </div>
+    <button type="button" class="btn btn-primary">Upload</button>
+    <button type="button" class="btn btn-primary">Edit Profile</button></br></br>
+    </div>
+
+
+   <!-- <h3>I can see my all connection requests here(pending)... I can accept or reject the request</h3> -->
+   <div class="col-md-12">
+    <div class="content-section">
+      <h3>My Posts</h3>
+      <p class='text-muted'>Here, We need to show only those posts which belongs to me!
+        <!-- <ul class="list-group">
+            {% for connection in pending_requests %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul> -->
+        {% for post in posts %}
+        <article class="media content-section">
+         <div class="media-body">
+           <div class="article-metadata">
+             <a class="mr-2" href="#">{{ post.author }}</a>
+             <small class="text-muted">{{ post.date_posted }}</small>
+           </div>
+           <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+           <p class="article-content">{{ post.content }}</p>
+         </div>
+       </article>
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+
+
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block sidebar %}
+<div class="col-md-4">
+    <div class="content-section">
+      <h3>My Connections</h3>
+      <p class='text-muted'>You can put any information here you'd like.
+        <ul class="list-group">
+            {% for connection in connections %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+{% endblock sidebar %}
+{% block content %}
+   <!-- <h3>I can see my all connection requests here(pending)... I can accept or reject the request</h3> -->
+   <div class="col-md-12">
+    <div class="content-section">
+      <h3>Pending Connections</h3>
+      <p class='text-muted'>All pending requests are here, we can accept or reject
+        <!-- <ul class="list-group">
+            {% for connection in pending_requests %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul> -->
+        {% for connection in pending_requests %}
+        <article class="media content-section">
+         <div class="media-body">
+           <div class="article-metadata">
+            <h2><a class="mr-2" href="#">{{ connection.name }}</a></h2>
+            <!-- <small class="text-muted">{{ connection.name }}</small> -->
+           </div>
+           <!-- <h2><a class="article-title" href="#">{{ connection.name }}</a></h2>-->
+           <p class="article-content">We can add any information here</p> 
+           <button type="button" class="btn btn-success">Accept</button>
+           <button type="button" class="btn btn-danger">Reject</button>
+         </div>
+       </article>
+
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+
+
+{% endblock content %}

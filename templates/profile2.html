@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block sidebar %}
+<div class="col-md-4">
+    <div class="content-section">
+      <h3>My Connections</h3>
+      <p class='text-muted'>My connections here
+        <ul class="list-group">
+            {% for connection in connections %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+
+
+{% endblock sidebar %}
+<!-- 
+{% block content %}
+   <h1>Profile page / form here</h1>
+   <div class="container">
+    <p>Need to upload image here...</p>            
+    <img src="default.jpg" class="rounded" alt="Default image" width="304" height="236"> 
+  </div>
+  <button type="button" class="btn btn-primary">Upload</button>
+  <button type="button" class="btn btn-primary">Edit Profile</button></br></br>
+  <h2>Here, we need to show only own (user's) post - Latest to oldest</h2>
+
+  {% for post in posts %}
+   <article class="content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ post.author }}</a>
+        <small class="text-muted">{{ post.date_posted }}</small>
+      </div>
+      <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+      <p class="article-content">{{ post.content }}</p>
+    </div>
+  </article>
+   {% endfor %}
+{% endblock content %}
+ -->
+
+
+<!-- lfdfd -->
+<!-- 
+{% block content1 %}
+   <h1>Profile page / form here</h1>
+   <div class="container">
+    <p>Need to upload image here...</p>            
+    <img src="default.jpg" class="rounded" alt="Default image" width="304" height="236"> 
+  </div>
+  <button type="button" class="btn btn-primary">Upload</button>
+  <button type="button" class="btn btn-primary">Edit Profile</button></br></br>
+  <h2>Here, we need to show only own (user's) post - Latest to oldest</h2>
+  <h3>Pending Connections</h3>
+  <div class="col-md-12">
+    <div class="content-section">
+      <h3>Pending Connections</h3>
+      <p class='text-muted'>All pending requests are here, we can accept or reject
+        {% for connection in pending_requests %}
+        <article class="media content-section">
+         <div class="media-body">
+           <div class="article-metadata">
+            <h2><a class="mr-2" href="#">{{ connection.name }}</a></h2>
+           </div>
+           <p class="article-content">We can add any information here</p> 
+           <button type="button" class="btn btn-success">Accept</button>
+           <button type="button" class="btn btn-danger">Reject</button>
+         </div>
+       </article>
+
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+
+
+{% endblock content1 %} -->
