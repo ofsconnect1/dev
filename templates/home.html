@@ -26,7 +26,27 @@
                             </li>
                             {% endfor %}
                     </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
                 </div>
+                
               </article>
         </ul>
         <a class="mr-2" href="#">My Pages</a></p>
@@ -77,8 +97,10 @@
 <div class="content-section">
     <div class="container">
         
-            <input class="form-control form-control-lg border border-warning" type="text" placeholder="Type your post"></br>
-        
+            <!-- <input class="form-control form-control-lg border border-warning" type="text" placeholder="Type your post"></br> -->
+            <div class="form-group">
+                <textarea class="form-control form-control-lg border border-warning" id="exampleFormControlTextarea1" placeholder="Type your post" rows="2"></textarea>
+              </div>
         <button type="button" class="btn btn-primary">Image Upload</button>
         <button type="button" class="btn btn-primary">Submit Post</button></br>
     </div>
@@ -87,7 +109,7 @@
    <div class="col-md-12">
     <div class="content-section">
       <h3>All Posts</h3>
-      <p class='text-muted'>Here, We need to show all posts which belongs to all (users/pages/groups)!
+      <p class='text-muted'><h5>Here, We need to show all posts which belongs to all (users/pages/groups)!</h5>
         <!-- <ul class="list-group">
             {% for connection in pending_requests %}
             <li  class="list-group-item list-group-item-light">
@@ -105,8 +127,31 @@
            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
            <p class="article-content">{{ post.content }}</p>
            We need to give options for response + thumsup n all
+           <span><br>
+            <img src="logg.png" width="114" height="38" onclick="DoSomething();" />
+            <input type="image" src="like.png" name="saveForm" class="fa fa-thumbs-o-up" id="saveForm" />
+            <button class="dislike">
+            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+            </button>
+            
+            <button class="like">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </button>
+    
+           <textarea class="form-control form-control-sm border border-info" id="Textarea2" placeholder="Comment" rows="1"></textarea>
+           <!-- <button type="button" class="btn btn-primary">Post Comment</button> -->
+
+  
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-outline-primary btn-sm" type="button">Post Comment</button>
+          </div>
+        
+        </span>
+ 
          </div>
+
        </article>
+
         {% endfor %}
       </p>
     </div>

@@ -3,8 +3,18 @@
 {% block sidebar %}
 <div class="col-md-4">
     <div class="content-section">
-      <h3>My Connections</h3>
-      <p class='text-muted'>My connections here
+      <h3>Group</h3>
+
+      <p class='text-muted'>Groups Created by Me
+        <ul class="list-group">
+            {% for connection in connections %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </p>
+      <p class='text-muted'>Groups I am the member of
         <ul class="list-group">
             {% for connection in connections %}
             <li  class="list-group-item list-group-item-light">
@@ -23,22 +33,22 @@
 
 
 {% block content %}
-<h1>Profile page / form here</h1>
+<h1>Create Group</h1>
     <div class="container">
         <div class="content-section">
-        <p>Need to upload image here...</p>            
+        <p>Need to upload Group image here...</p>            
         <img src="default.jpg" class="rounded" alt="Default image" width="304" height="236"> 
     </div>
     <button type="button" class="btn btn-primary">Upload</button>
-    <button type="button" class="btn btn-primary">Edit Profile</button></br></br>
+    <button type="button" class="btn btn-primary">Edit Group</button></br></br>
     </div>
 
 
    <!-- <h3>I can see my all connection requests here(pending)... I can accept or reject the request</h3> -->
    <div class="col-md-12">
     <div class="content-section">
-      <h3>My Posts</h3>
-      <p class='text-muted'>Here, We need to show only those posts which belongs to me!
+      <h3>Group - (Group name) Posts</h3>
+      <p class='text-muted'>Here, We need to show only those posts which belongs to this group!
         <!-- <ul class="list-group">
             {% for connection in pending_requests %}
             <li  class="list-group-item list-group-item-light">

@@ -126,5 +126,71 @@ def group():
         return redirect(url_for('group'))
     return render_template('group.html', title='Profile',inside='true', form=form,connections=connections, posts=posts)
 
+
+@app.route("/page", methods=['GET', 'POST'])
+def page():
+    connections=[
+    {
+        'name': 'Abc Schafer',
+    },
+    {
+        'name': 'Pqr Doe',
+    },
+    {
+        'name': 'Xyz -',
+    }
+]
+
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Page created for {form.username.data}!', 'success')
+        return redirect(url_for('page'))
+    return render_template('page.html', title='Page',inside='true', form=form,connections=connections, posts=posts)
+
+
+
+@app.route("/event", methods=['GET', 'POST'])
+def event():
+    connections=[
+    {
+        'name': 'Abc Schafer',
+    },
+    {
+        'name': 'Pqr Doe',
+    },
+    {
+        'name': 'Xyz -',
+    }
+]
+
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Event created for {form.username.data}!', 'success')
+        return redirect(url_for('event'))
+    return render_template('event.html', title='Event',inside='true', form=form,connections=connections, posts=posts)
+
+
+
+@app.route("/edit_profile", methods=['GET', 'POST'])
+def edit_profile():
+    connections=[
+    {
+        'name': 'Abc Schafer',
+    },
+    {
+        'name': 'Pqr Doe',
+    },
+    {
+        'name': 'Xyz -',
+    }
+]
+
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Profile edited for {form.username.data}!', 'success')
+        return redirect(url_for('edit_profile'))
+    return render_template('edit_profile.html', title='Event',inside='true', form=form,connections=connections, posts=posts)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

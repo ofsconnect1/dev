@@ -43,16 +43,33 @@
               <a class="nav-item nav-link" href="{{ url_for('connections') }}">Connections</a>
               <a class="nav-item nav-link" href="{{ url_for('notifications') }}">Notifications</a>
               <a class="nav-item nav-link" href="{{ url_for('profile') }}">My Profile</a>
-              <a class="nav-item nav-link" href="{{ url_for('profile') }}">Create</a>
+              
+              <div class="dropdown">
+                <button class="nav-item nav-link navbar-expand-md bg-steel btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Create
+                </button>
+
+                <!-- <button class="navbar navbar-expand-md navbar-dark bg-steel fixed-top dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Create
+                  </button> -->
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{{ url_for('profile') }}">Profile</a>
+                  <a class="dropdown-item" href="{{ url_for('page') }}">Page</a>
+                  <a class="dropdown-item" href="{{ url_for('group') }}">Group</a>
+                  <a class="dropdown-item" href="{{ url_for('event') }}">Event</a>
+                </div>
+              </div>
+
+
             </div>
             <div class="navbar-nav">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="dark" checked>
-                <label class="form-check-label" for="inlineRadio1">Dark</label>
+                <input class="navbar-nav nav-link" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="dark" checked>
+                <label class="navbar-nav nav-link" for="inlineRadio1">Dark</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="light">
-                <label class="form-check-label" for="inlineRadio2">Light</label>
+                <input class="navbar-nav nav-link" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="light">
+                <label class="navbar-nav nav-link" for="inlineRadio2">Light</label>
               </div>
             </div>
             
