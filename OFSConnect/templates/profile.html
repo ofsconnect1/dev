@@ -3,6 +3,14 @@
 {% block sidebar %}
 <div class="col-md-4">
     <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+          <h3><a class="mr-2" href="#">{{ current_user.username }}</a></h3>
+          <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+      </div>
+
       <h3>My Connections</h3>
       <p class='text-muted'>My connections here
         <ul class="list-group">
@@ -26,6 +34,7 @@
 <h1>Profile page / form here</h1>
     <div class="container">
         <div class="content-section">
+
         <p>Need to upload image here...</p>            
         <img src="default.jpg" class="rounded" alt="Default image" width="304" height="236"> 
     </div>

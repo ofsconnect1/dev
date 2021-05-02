@@ -1,4 +1,6 @@
-from demo import db, User, Post
+# from demo import db, User, Post
+from OFSConnect import db
+from OFSConnect.models import User, Post
 
 db.create_all()
 user1=User(username='admin',email='admin@gmail',password='admin')

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+   <h1>Latest notifications/ updates... May be upcoming Birthdays.. and posts from HR or RMO</h1>
+   <h2>Page under construction</h2>
+{% endblock content %}
+{% block sidebar %}
+<div class="col-md-4">
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+         <h3><a class="mr-2" href="#">{{ current_user.username }}</a></h3>
+         <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+      </div>
+      
+      <h3>My Connections</h3>
+      <p class='text-muted'>My connections here
+        <ul class="list-group">
+            {% for connection in connections %}
+            <li  class="list-group-item list-group-item-light">
+                <a class="mr-2" href="#">{{ connection.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+{% endblock sidebar %}

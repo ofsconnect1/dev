@@ -31,13 +31,15 @@
 
           <div class="collapse navbar-collapse" id="navbarToggle">
 
-            
+            {% if current_user.is_authenticated %}
+           
             <div class="navbar-nav mr-auto">
+              <!-- <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a> -->
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Chat</a>
               <a class="nav-item nav-link" href="{{ url_for('group') }}">Groups</a>
               
             </div>
-            {% if inside == 'true' %}
+            
             <div class="navbar-nav">
             <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('connections') }}">Connections</a>
@@ -74,7 +76,7 @@
             </div>
             
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Logout</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
               </div>
             {% else %}
                 <title>OFS</title>

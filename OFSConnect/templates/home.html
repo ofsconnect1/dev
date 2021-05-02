@@ -3,14 +3,21 @@
 {% block sidebar %}
 <div class="col-md-4">
     <div class="content-section">
-      <h3><a class="mr-2" href="#">Current user name</a></h3>
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+            <h3><a class="mr-2" href="#">{{ current_user.username }}</a></h3>
+            <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+      </div>
+
       <p class='text-muted'>You can put any information here you'd like.</br>
         <a class="mr-2" href="#">Pages</a></p>
         <ul class="list-group">
             <article class="media content-section">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" href="#">Current user name</a>
+                        <a class="mr-2" href="#">{{ current_user.username }}</a>
                     </div>
                 </div>
               </article>
@@ -96,14 +103,88 @@
 {% block content %}
 <div class="content-section">
     <div class="container">
+
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> Good morning Milind....</legend>
+
+            <div class="form-group">
+
+              <!-- {{ form.title.label(class="form-control-label") }}
+              {% if form.title.errors %}
+                  {{ form.title(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.title.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.title(class="form-control form-control-lg") }}
+              {% endif %} -->
+
+
+              <!-- placeholder="Type your post" -->
+              
+                <!-- {{ form.content.label(class="form-control-label") }} -->
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control form-control-lg is-invalid border border-warning") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg border border-warning",placeholder="What's in ur mind?") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.upload(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
         
             <!-- <input class="form-control form-control-lg border border-warning" type="text" placeholder="Type your post"></br> -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <textarea class="form-control form-control-lg border border-warning" id="exampleFormControlTextarea1" placeholder="Type your post" rows="2"></textarea>
-              </div>
+            </div>
         <button type="button" class="btn btn-primary">Image Upload</button>
         <button type="button" class="btn btn-primary">Submit Post</button></br>
-    </div>
+    </div> -->
+
+<!-- 
+{{ form.content.data }}
+    <div class="content-section">
+      <form method="POST" action="">
+          {{ form.hidden_tag() }}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">whats in ur mind?</legend>
+
+              <div class="form-group">
+                  {{ form.content.label(class="form-control-label") }}
+                  {% if form.content.errors %}
+                      {{ form.content(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.content.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.content(class="form-control form-control-lg") }}
+                  {% endif %}
+              </div>
+          </fieldset>
+          <div class="form-group">
+              {{ form.submit(class="btn btn-outline-info") }}
+          </div>
+      </form> -->
+
+
+
+
+
+
 </div>
 
    <div class="col-md-12">
